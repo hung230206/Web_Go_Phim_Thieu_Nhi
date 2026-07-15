@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vui Gõ Telex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=victory-sound-8" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-board" aria-label="Luyện gõ Telex tiếng Việt">
+        <aside class="stage-panel" aria-label="Chọn màn">
+          <div class="brand">
+            <div class="brand-mark" aria-hidden="true">ă</div>
+            <div>
+              <h1>Vui Gõ Telex</h1>
+              <p>Học dấu, vượt màn, gom sao</p>
+            </div>
+          </div>
+
+          <div class="player-card">
+            <div>
+              <span class="eyebrow">Phiêu lưu</span>
+              <strong id="rankName">Tân binh bàn phím</strong>
+            </div>
+            <div class="score-bubble">
+              <span id="totalStars">0</span>
+              <small>sao</small>
+            </div>
+          </div>
+
+          <div class="stage-list" id="stageList"></div>
+        </aside>
+
+        <section class="practice-panel">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow" id="stageType">Màn 1</span>
+              <h2 id="stageTitle">Khởi động vui</h2>
+            </div>
+            <div class="stats-row" aria-label="Thống kê">
+              <div class="stat">
+                <span id="accuracyValue">100%</span>
+                <small>đúng</small>
+              </div>
+              <div class="stat">
+                <span id="speedValue">0</span>
+                <small>kí tự/phút</small>
+              </div>
+              <div class="stat">
+                <span id="wpmValue">0</span>
+                <small>WPM</small>
+              </div>
+              <div class="stat combo-stat">
+                <span id="comboValue">0</span>
+                <small>combo</small>
+              </div>
+            </div>
+          </header>
+
+          <div class="excitement" aria-label="Thanh phấn khích">
+            <div class="meter">
+              <div class="meter-fill" id="meterFill"></div>
+            </div>
+            <span id="hypeLabel">Sẵn sàng!</span>
+          </div>
+
+          <div class="target-card">
+            <div class="sentence" id="targetText" aria-live="polite"></div>
+            <div class="focus-strip">
+              <span>Từ đang gõ</span>
+              <strong id="currentWord">...</strong>
+              <span>Kí tự</span>
+              <strong id="currentChar">...</strong>
+            </div>
+          </div>
+
+          <div class="typing-zone">
+            <label for="typingInput">Bạn gõ Telex</label>
+            <textarea
+              id="typingInput"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              rows="4"
+              placeholder="Bắt đầu gõ ở đây..."
+            ></textarea>
+            <div class="preview-line">
+              <span>Hiện ra</span>
+              <strong id="convertedPreview"></strong>
+            </div>
+          </div>
+
+          <footer class="controls">
+            <button class="icon-button" id="restartButton" type="button" title="Làm lại màn" aria-label="Làm lại màn">
+              ↻
+            </button>
+            <button class="primary-button" id="nextButton" type="button">Màn tiếp</button>
+          </footer>
+        </section>
+      </section>
+
+      <div class="celebration" id="celebration" aria-hidden="true"></div>
+
+      <dialog class="victory-dialog" id="victoryDialog" aria-labelledby="victoryTitle">
+        <div class="victory-badge" aria-hidden="true">★</div>
+        <span class="eyebrow">Hoàn thành màn</span>
+        <h2 id="victoryTitle">Tuyệt vời!</h2>
+        <p id="victoryMessage">Bạn đã chinh phục thử thách.</p>
+        <div class="victory-stats">
+          <div>
+            <strong id="victoryTime">0:00</strong>
+            <span>thời gian</span>
+          </div>
+          <div>
+            <strong id="victoryWpm">0</strong>
+            <span>WPM</span>
+          </div>
+          <div>
+            <strong id="victoryAccuracy">100%</strong>
+            <span>chính xác</span>
+          </div>
+        </div>
+        <div class="victory-actions">
+          <button class="secondary-button" id="victoryRetry" type="button">Gõ lại</button>
+          <button class="primary-button" id="victoryNext" type="button">Màn tiếp</button>
+        </div>
+      </dialog>
+    </main>
+
+    <script src="app.js?v=key-sound-loud-11"></script>
+  </body>
+</html>
